@@ -2,14 +2,14 @@ rm(list=ls(all=TRUE))
 library('MCMCpack')
 set.seed(1)
 
-nobs=1000
-nseg=10
+nobs=9000
+nseg=30
 tmp=runif(nseg)
 prob=tmp/sum(tmp); prob
 partition=rmultinom(1,size=nobs,prob=prob)
 seg.index=rep(1:nseg,times=partition)
 
-nloc=100
+nloc=300
 prob=rdirichlet(nseg,rep(0.01,nloc))
 
 obs=rep(NA,nobs)
