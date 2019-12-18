@@ -1,5 +1,5 @@
 rm(list=ls(all=TRUE))
-set.seed(1)
+set.seed(3)
 
 setwd('U:\\GIT_models\\git_segmentation_model')
 source('gibbs functions.R')
@@ -13,7 +13,7 @@ max.time=max(dat$time1)
 nloc=max(dat$loc.id)
 
 #starting values
-breakpt=mean(dat$time1)
+breakpt=floor(mean(dat$time1))
 
 ngibbs=10000
 for (i in 1:ngibbs){

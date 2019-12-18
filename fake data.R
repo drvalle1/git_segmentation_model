@@ -1,6 +1,6 @@
 rm(list=ls(all=TRUE))
 library('MCMCpack')
-set.seed(1)
+set.seed(2)
 
 nobs=9000
 nseg=30
@@ -18,7 +18,8 @@ for (i in 1:nobs){
   obs[i]=which(tmp==1)
 }
 plot(obs)
-abline(v=cumsum(partition))
+tmp=cumsum(partition)
+abline(v=tmp[-length(tmp)])
 
 obs1=data.frame(loc.id=obs)
 obs1$time1=1:nobs
