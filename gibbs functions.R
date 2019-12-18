@@ -51,7 +51,7 @@ samp.move=function(breakpt,max.time,dat,alpha,nloc){
     #swap
     if (rand1 > 2/3) {
       ind=sample(1:length(breakpt.old),size=1)
-      breakpt.new=unique(sort(c(breakpt.old[-ind],new.brk)))
+      breakpt.new=sort(unique(c(breakpt.old[-ind],new.brk)))
     }
   }
   
